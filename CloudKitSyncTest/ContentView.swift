@@ -21,7 +21,10 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Button(intent: UpdateTimestampAppIntent(item: item)) {
+                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        }
+                        .buttonStyle(.bordered)
                     } label: {
                         Text(item.timestamp!, formatter: itemFormatter)
                     }

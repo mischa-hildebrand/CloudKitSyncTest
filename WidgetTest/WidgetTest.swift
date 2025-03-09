@@ -54,21 +54,11 @@ struct WidgetTestEntryView : View {
         }
         return first
     }
-    
-    private var intent: UpdateTimestampAppIntent {
-        let itemEntity = SimpleItemEntity(
-            id: newestItem.objectID.uriRepresentation().absoluteString,
-            timestamp: newestItem.timestamp
-        )
-        let intent = UpdateTimestampAppIntent()
-        intent.itemEntity = itemEntity
-        return intent
-    }
 
     var entry: Provider.Entry
 
     var body: some View {
-        Button(intent: intent) {
+        Button(intent: UpdateTimestampAppIntent(item: newestItem)) {
             Text("\(newestItem.timestamp!)")
         }
     }

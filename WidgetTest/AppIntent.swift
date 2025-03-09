@@ -40,11 +40,24 @@ struct UpdateTimestampAppIntent: AppIntent {
         item.timestamp = updatedTimestamp
         do {
             try viewContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         } catch {
             let nsError = error as NSError
             fatalError("Saving the view context failed with unresolved error \(nsError), \(nsError.userInfo)")
         }
         return .result(value: updatedTimestamp)
+    }
+}
+
+extension UpdateTimestampAppIntent {
+    init(item: SimpleItem) {
+        let itemEntity = SimpleItemEntity(
+            id: item.objectID.uriRepresentation().absoluteString,
+            timestamp: item.timestamp
+        )
+        let intent = UpdateTimestampAppIntent()
+        intent.itemEntity = itemEntity
+        self = intent
     }
 }
 
