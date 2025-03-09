@@ -6,8 +6,42 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		34876BE52D7DA65800A2CC07 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34876BE42D7DA65800A2CC07 /* WidgetKit.framework */; };
+		34876BE72D7DA65800A2CC07 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34876BE62D7DA65800A2CC07 /* SwiftUI.framework */; };
+		34876BF82D7DA65900A2CC07 /* WidgetTestExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 34876BE22D7DA65800A2CC07 /* WidgetTestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34876BF62D7DA65900A2CC07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34876BBD2D7D04FC00A2CC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34876BE12D7DA65800A2CC07;
+			remoteInfo = WidgetTestExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		34876BFD2D7DA65900A2CC07 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				34876BF82D7DA65900A2CC07 /* WidgetTestExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		34876BC52D7D04FC00A2CC07 /* CloudKitSyncTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitSyncTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34876BE22D7DA65800A2CC07 /* WidgetTestExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetTestExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		34876BE42D7DA65800A2CC07 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		34876BE62D7DA65800A2CC07 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		34876BFE2D7DA66500A2CC07 /* WidgetTestExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetTestExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -17,6 +51,13 @@
 				Info.plist,
 			);
 			target = 34876BC42D7D04FC00A2CC07 /* CloudKitSyncTest */;
+		};
+		34876BFC2D7DA65900A2CC07 /* Exceptions for "WidgetTest" folder in "WidgetTestExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 34876BE12D7DA65800A2CC07 /* WidgetTestExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -29,6 +70,14 @@
 			path = CloudKitSyncTest;
 			sourceTree = "<group>";
 		};
+		34876BE82D7DA65800A2CC07 /* WidgetTest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				34876BFC2D7DA65900A2CC07 /* Exceptions for "WidgetTest" folder in "WidgetTestExtension" target */,
+			);
+			path = WidgetTest;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,13 +88,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34876BDF2D7DA65800A2CC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34876BE72D7DA65800A2CC07 /* SwiftUI.framework in Frameworks */,
+				34876BE52D7DA65800A2CC07 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		34876BBC2D7D04FC00A2CC07 = {
 			isa = PBXGroup;
 			children = (
+				34876BFE2D7DA66500A2CC07 /* WidgetTestExtension.entitlements */,
 				34876BC72D7D04FC00A2CC07 /* CloudKitSyncTest */,
+				34876BE82D7DA65800A2CC07 /* WidgetTest */,
+				34876BE32D7DA65800A2CC07 /* Frameworks */,
 				34876BC62D7D04FC00A2CC07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,8 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				34876BC52D7D04FC00A2CC07 /* CloudKitSyncTest.app */,
+				34876BE22D7DA65800A2CC07 /* WidgetTestExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		34876BE32D7DA65800A2CC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34876BE42D7DA65800A2CC07 /* WidgetKit.framework */,
+				34876BE62D7DA65800A2CC07 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,10 +139,12 @@
 				34876BC12D7D04FC00A2CC07 /* Sources */,
 				34876BC22D7D04FC00A2CC07 /* Frameworks */,
 				34876BC32D7D04FC00A2CC07 /* Resources */,
+				34876BFD2D7DA65900A2CC07 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				34876BF72D7DA65900A2CC07 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				34876BC72D7D04FC00A2CC07 /* CloudKitSyncTest */,
@@ -82,6 +155,28 @@
 			productName = CloudKitSyncTest;
 			productReference = 34876BC52D7D04FC00A2CC07 /* CloudKitSyncTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		34876BE12D7DA65800A2CC07 /* WidgetTestExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34876BF92D7DA65900A2CC07 /* Build configuration list for PBXNativeTarget "WidgetTestExtension" */;
+			buildPhases = (
+				34876BDE2D7DA65800A2CC07 /* Sources */,
+				34876BDF2D7DA65800A2CC07 /* Frameworks */,
+				34876BE02D7DA65800A2CC07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				34876BE82D7DA65800A2CC07 /* WidgetTest */,
+			);
+			name = WidgetTestExtension;
+			packageProductDependencies = (
+			);
+			productName = WidgetTestExtension;
+			productReference = 34876BE22D7DA65800A2CC07 /* WidgetTestExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +189,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					34876BC42D7D04FC00A2CC07 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					34876BE12D7DA65800A2CC07 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -113,12 +211,20 @@
 			projectRoot = "";
 			targets = (
 				34876BC42D7D04FC00A2CC07 /* CloudKitSyncTest */,
+				34876BE12D7DA65800A2CC07 /* WidgetTestExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		34876BC32D7D04FC00A2CC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34876BE02D7DA65800A2CC07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +241,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34876BDE2D7DA65800A2CC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34876BF72D7DA65900A2CC07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34876BE12D7DA65800A2CC07 /* WidgetTestExtension */;
+			targetProxy = 34876BF62D7DA65900A2CC07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		34876BDA2D7D04FD00A2CC07 /* Debug */ = {
@@ -323,6 +444,64 @@
 			};
 			name = Release;
 		};
+		34876BFA2D7DA65900A2CC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetTestExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4R384VB9X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetTest;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.mischa-hildebrand.CloudKitSyncTest.WidgetTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		34876BFB2D7DA65900A2CC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetTestExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4R384VB9X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetTest;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.mischa-hildebrand.CloudKitSyncTest.WidgetTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,6 +519,15 @@
 			buildConfigurations = (
 				34876BDA2D7D04FD00A2CC07 /* Debug */,
 				34876BDB2D7D04FD00A2CC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34876BF92D7DA65900A2CC07 /* Build configuration list for PBXNativeTarget "WidgetTestExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34876BFA2D7DA65900A2CC07 /* Debug */,
+				34876BFB2D7DA65900A2CC07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
