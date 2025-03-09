@@ -70,7 +70,8 @@
 		34876C032D7DBB3200A2CC07 /* Exceptions for "WidgetTest" folder in "CloudKitSyncTest" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				AppIntent.swift,
+				SimpleItemEntity.swift,
+				UpdateTimestampAppIntent.swift,
 			);
 			target = 34876BC42D7D04FC00A2CC07 /* CloudKitSyncTest */;
 		};
