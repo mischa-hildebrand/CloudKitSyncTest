@@ -22,6 +22,10 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
+                        // When this button is tapped, the timestamp for this item should be updated:
+                        // 1. within this app, i.e. in this view and in the list view
+                        // 2. on the widget (if the widget is displaying this item)
+                        // 3. it the app and the widgets on other devices with the same logged-in iCloud user
                         Button(intent: UpdateTimestampAppIntent(item: item)) {
                             Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                         }

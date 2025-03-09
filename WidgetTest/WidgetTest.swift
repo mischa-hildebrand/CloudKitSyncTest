@@ -43,6 +43,10 @@ struct WidgetTestEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
+        // When this button is tapped, the timestamp for this item should be updated:
+        // 1. on the widget
+        // 2. everywhere in the app where it's displayed as soon as the user brings the app to the foreground
+        // 3. it the app and the widgets on other devices with the same logged-in iCloud user
         Button(intent: UpdateTimestampAppIntent(item: newestItem)) {
             Text("\(newestItem.timestamp!)")
         }

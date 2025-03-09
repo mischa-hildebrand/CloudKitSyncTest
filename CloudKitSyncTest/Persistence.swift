@@ -34,6 +34,7 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         } else {
+            // Use a shared app group allow the app and the widget to access the same on-device store
             let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.CloudKitSyncTestContainer")!
             let storeURL = containerURL.appendingPathComponent("SharedStore.sqlite")
             let description = NSPersistentStoreDescription(url: storeURL)
