@@ -5,6 +5,7 @@
 //  Created by Mischa (privat) on 09.03.25.
 //
 
+import CoreData
 import WidgetKit
 import SwiftUI
 
@@ -42,15 +43,30 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WidgetTestEntryView : View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)], animation: .default)
+    private var items: FetchedResults<Item>
+    
+    private var firstItem: Item {
+        guard let first = items.first else {
+            fatalError("Empty items array. --> No items were fetched from the Core Data store.")
+        }
+        return first
+    }
+
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        Button {
+            firstItem.timestamp = Date()
+            do {
+                try viewContext.save()
+            } catch {
+                fatalError("Unable to save context: \(error)")
+            }
+        } label: {
+            Text("\(firstItem.timestamp!)")
         }
     }
 }
@@ -62,6 +78,7 @@ struct WidgetTest: Widget {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             WidgetTestEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         }
     }
 }

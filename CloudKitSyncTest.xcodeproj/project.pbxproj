@@ -59,6 +59,14 @@
 			);
 			target = 34876BE12D7DA65800A2CC07 /* WidgetTestExtension */;
 		};
+		34876C002D7DA82200A2CC07 /* Exceptions for "CloudKitSyncTest" folder in "WidgetTestExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CloudKitSyncTest.xcdatamodeld,
+				Persistence.swift,
+			);
+			target = 34876BE12D7DA65800A2CC07 /* WidgetTestExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -66,6 +74,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				34876BD82D7D04FD00A2CC07 /* Exceptions for "CloudKitSyncTest" folder in "CloudKitSyncTest" target */,
+				34876C002D7DA82200A2CC07 /* Exceptions for "CloudKitSyncTest" folder in "WidgetTestExtension" target */,
 			);
 			path = CloudKitSyncTest;
 			sourceTree = "<group>";

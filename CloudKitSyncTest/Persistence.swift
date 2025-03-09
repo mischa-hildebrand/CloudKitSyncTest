@@ -35,6 +35,11 @@ struct PersistenceController {
         container = NSPersistentCloudKitContainer(name: "CloudKitSyncTest")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.CloudKitSyncTestContainer")!
+            let storeURL = containerURL.appendingPathComponent("SharedStore.sqlite")
+            let description = NSPersistentStoreDescription(url: storeURL)
+            container.persistentStoreDescriptions = [description]
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
