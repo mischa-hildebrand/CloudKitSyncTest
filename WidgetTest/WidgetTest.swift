@@ -51,19 +51,35 @@ struct WidgetTestEntryView : View {
 
 struct WidgetTest: Widget {
     let kind: String = "WidgetTest"
+    let isPreview: Bool
+    
+    init(isPreview: Bool) {
+        self.isPreview = isPreview
+    }
+    
+    init() {
+        self.init(isPreview: false)
+    }
+    
+    var viewContext: NSManagedObjectContext {
+        if isPreview {
+            PersistenceController.preview.container.viewContext
+        } else {
+            PersistenceController.shared.container.viewContext
+        }
+    }
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetTestEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
-                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                .environment(\.managedObjectContext, viewContext)
         }
     }
 }
 
-#Preview(as: .systemSmall) {
-    WidgetTest()
+#Preview(as: .systemMedium) {
+    WidgetTest(isPreview: true)
 } timeline: {
-    SimpleEntry(date: .now)
     SimpleEntry(date: .now)
 }
