@@ -45,28 +45,31 @@ struct SimpleEntry: TimelineEntry {
 struct WidgetTestEntryView : View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)], animation: .default)
-    private var items: FetchedResults<Item>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SimpleItem.timestamp, ascending: false)], animation: .default)
+    private var items: FetchedResults<SimpleItem>
     
-    private var firstItem: Item {
+    private var newestItem: SimpleItem {
         guard let first = items.first else {
             fatalError("Empty items array. --> No items were fetched from the Core Data store.")
         }
         return first
     }
+    
+    private var intent: UpdateTimestampAppIntent {
+        let itemEntity = SimpleItemEntity(
+            id: newestItem.objectID.uriRepresentation().absoluteString,
+            timestamp: newestItem.timestamp
+        )
+        let intent = UpdateTimestampAppIntent()
+        intent.itemEntity = itemEntity
+        return intent
+    }
 
     var entry: Provider.Entry
 
     var body: some View {
-        Button {
-            firstItem.timestamp = Date()
-            do {
-                try viewContext.save()
-            } catch {
-                fatalError("Unable to save context: \(error)")
-            }
-        } label: {
-            Text("\(firstItem.timestamp!)")
+        Button(intent: intent) {
+            Text("\(newestItem.timestamp!)")
         }
     }
 }

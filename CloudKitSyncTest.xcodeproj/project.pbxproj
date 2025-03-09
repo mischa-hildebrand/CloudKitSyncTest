@@ -67,6 +67,13 @@
 			);
 			target = 34876BE12D7DA65800A2CC07 /* WidgetTestExtension */;
 		};
+		34876C032D7DBB3200A2CC07 /* Exceptions for "WidgetTest" folder in "CloudKitSyncTest" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntent.swift,
+			);
+			target = 34876BC42D7D04FC00A2CC07 /* CloudKitSyncTest */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -82,6 +89,7 @@
 		34876BE82D7DA65800A2CC07 /* WidgetTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				34876C032D7DBB3200A2CC07 /* Exceptions for "WidgetTest" folder in "CloudKitSyncTest" target */,
 				34876BFC2D7DA65900A2CC07 /* Exceptions for "WidgetTest" folder in "WidgetTestExtension" target */,
 			);
 			path = WidgetTest;
