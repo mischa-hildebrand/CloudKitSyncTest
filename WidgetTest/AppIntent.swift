@@ -9,15 +9,6 @@ import CoreData
 import WidgetKit
 import AppIntents
 
-struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource { "Configuration" }
-    static var description: IntentDescription { "This is an example widget." }
-    
-    // An example configurable parameter.
-    @Parameter(title: "Favorite Emoji", default: "😃")
-    var favoriteEmoji: String
-}
-
 struct UpdateTimestampAppIntent: AppIntent {
     static var title: LocalizedStringResource { "Update Timestamp" }
     static var description: IntentDescription { "Sets the item's timestamp to the current time." }
