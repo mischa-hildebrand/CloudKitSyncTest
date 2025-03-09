@@ -12,7 +12,8 @@ import SwiftUI
 struct WidgetTestBundle: WidgetBundle {
     var body: some Widget {
         WidgetTest()
-        WidgetTestControl()
-        WidgetTestLiveActivity()
+        // Not relevant for this sample project:
+        // WidgetTestControl()
+        // WidgetTestLiveActivity()
     }
 }
