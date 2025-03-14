@@ -12,3 +12,6 @@ I created this app as a minimal code example to figure out a way for a widget an
 
 #### Additional Requirement:
 * Any change should also be reflected on any other devices where the same iCloud user is logged in with minimal latency. 
+
+> [!WARNING]
+> To keep tiings simple, the widget always uses entity with the newert creation date. (It's not configurable.) So when you create a new item in the app, the item that the widget displays changes.
